@@ -1,7 +1,7 @@
 pipeline {
   agent { 
     docker { 
-      image 'mcr.microsoft.com/playwright:v1.17.2-focal'
+      image 'mcr.microsoft.com/playwright:v1.21.1-focal'
     } 
   }
   stages {
@@ -22,7 +22,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test
+          npx playwright test --reporter list
         '''
       }
       post {
